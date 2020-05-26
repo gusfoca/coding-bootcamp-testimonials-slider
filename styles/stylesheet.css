@@ -13,6 +13,35 @@ html {
   font-size: 32px;  
 }
 
+.slides-container {
+  /*display: flow-root;*/
+  position: relative;
+  width: max-content;
+  left: 0;
+  transition: left 0.5s ease-out 0.1s;
+}
+
+.slides-container:active {
+  left: -100vw;
+}
+
+.slide {
+  display: inline-block;
+  width: 100vw;
+}
+
+.slide1 {
+  display: inline-block;
+  width: 100vw;
+  left: 0vw;
+}
+
+.slide2 {
+  display: inline-block;
+  width: 100vw;
+  left: 100vw;
+}
+
 .quote {
   background-image: url('../images/pattern-quotes.svg');
   background-size: contain;
