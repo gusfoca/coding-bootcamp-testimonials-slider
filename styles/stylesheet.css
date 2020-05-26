@@ -7,6 +7,13 @@
   padding: 0;
 }
 
+:root {  
+  --photo-bkg-margin: 24px;
+  --photo-bkg-width: 325px;
+  --photo-bkg-height: 306px;
+}
+
+
 html {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
@@ -14,15 +21,10 @@ html {
 }
 
 .slides-container {
-  /*display: flow-root;*/
   position: relative;
   width: max-content;
   left: 0;
   transition: left 0.5s ease-out 0.1s;
-}
-
-.slides-container:active {
-  left: -100vw;
 }
 
 .slide {
@@ -31,14 +33,10 @@ html {
 }
 
 .slide1 {
-  display: inline-block;
-  width: 100vw;
   left: 0vw;
 }
 
 .slide2 {
-  display: inline-block;
-  width: 100vw;
   left: 100vw;
 }
 
@@ -53,18 +51,14 @@ html {
 .photo-container {
   position: relative;
   padding: 8% 10%;
-  background-size: contain; 
-  background-image: url('../images/pattern-bg.svg');   
-  z-index: -2;  
 }
 
 .photo-image {
-  object-fit: cover; 
+  object-fit: cover;
   width: 100%; /*255px mobile*/
   height: auto;
   border-radius: 2%;
   box-shadow: 0 25px 50px -15px rgba(0,0,0,0.5);
-  z-index: -1;
 }
 
 .arrows-container { 
@@ -73,7 +67,6 @@ html {
   left: 37%;
   width: 33%;
   height: 13%;
-  z-index: 1;
 }
 
 .arrow-previous, .arrow-next {  
@@ -103,6 +96,32 @@ html {
   left: -11%;
 }
 
+.arwnext1:hover {
+  position: relative;
+  top: -2px;
+  box-shadow: -5px 5px 5px 2px rgba(0,0,0,0.2);
+}
+
+.arwnext1:active {
+  position: relative;
+  background-color: hsl(0,0%,95%);
+  top: 0;
+  box-shadow: -5px 5px 5px 2px rgba(0,0,0,0);
+}
+
+.arwprev2:hover {
+  position: relative;
+  top: -2px;
+  box-shadow: -5px 5px 5px 2px rgba(0,0,0,0.2);
+}
+
+.arwprev2:active {
+  position: relative;
+  background-color: hsl(0,0%,95%);
+  top: 0;
+  box-shadow: -5px 5px 5px 2px rgba(0,0,0,0);
+}
+
 .testimonial-container {
   position: relative;
 }
@@ -120,6 +139,17 @@ html {
 
 .prof {
   color: hsl(240, 18%, 77%);
+}
+
+.photo-background {
+  position: absolute;
+  margin: var(--photo-bkg-margin) 6.7%;    
+    width: var(--photo-bkg-width);
+    height: var(--photo-bkg-height);
+  top: 0;  
+  background-size: contain;
+  background-image: url('../images/pattern-bg.svg');
+  z-index: -1;
 }
 
 .curve {
@@ -142,9 +172,9 @@ html {
 
 @media screen and (max-width: 501px) {
   .photo-container {
-    margin: 24px auto;    
-    width: 325px;
-    height: 306px;
+    margin: var(--photo-bkg-margin) auto;    
+    width: var(--photo-bkg-width);
+    height: var(--photo-bkg-height);
   }
   
   .quote {
