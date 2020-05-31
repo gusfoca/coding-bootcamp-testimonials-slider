@@ -6,20 +6,13 @@
   margin: 0;
   padding: 0;
 }
-/*
-:root {  
-  --photo-bkg-margin: 24px;
-  --photo-bkg-width: 325px;
-  --photo-bkg-height: 306px;
-}
-*/
 
 html {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 32px;  
   
-  --photo-bkg-margin: 24px;
+  --photo-bkg-margin-v: 24px;
   --photo-bkg-width: 325px;
   --photo-bkg-height: 306px;
   
@@ -62,7 +55,7 @@ body {
 
 .photo-container {
   position: relative;
-  padding: 8% 10%;
+  padding: 30px 10%;
 }
 
 .photo-image {
@@ -144,9 +137,9 @@ body {
 
 .photo-background {
   position: absolute;
-  margin: var(--photo-bkg-margin) 6.7%;    
-    width: var(--photo-bkg-width);
-    height: var(--photo-bkg-height);
+  margin: var(--photo-bkg-margin-v) calc(50% - var(--photo-bkg-width) / 2);    
+  width: var(--photo-bkg-width);
+  height: var(--photo-bkg-height);
   top: 0;  
   background-size: contain;
   background-image: url('../images/pattern-bg.svg');
@@ -171,9 +164,9 @@ body {
   font-size: 0.5rem;
 }
 
-@media screen and (max-width: 501px) {
+@media screen and (max-width: 500px) {
   .photo-container {
-    margin: var(--photo-bkg-margin) auto;    
+    margin: var(--photo-bkg-margin-v) auto;    
     width: var(--photo-bkg-width);
     height: var(--photo-bkg-height);
   }
@@ -196,7 +189,7 @@ body {
   }  
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 1000px) {
   .photo-container {
     position: absolute;
   }
