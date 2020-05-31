@@ -6,25 +6,33 @@
   margin: 0;
   padding: 0;
 }
-
+/*
 :root {  
   --photo-bkg-margin: 24px;
   --photo-bkg-width: 325px;
   --photo-bkg-height: 306px;
 }
-
+*/
 
 html {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   font-size: 32px;  
+  
+  --photo-bkg-margin: 24px;
+  --photo-bkg-width: 325px;
+  --photo-bkg-height: 306px;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .slides-container {
   position: relative;
   width: max-content;
   left: 0;
-  transition: left 0.5s ease-out 0.1s;
+  transition: left 0.5s ease-out 0.1s;  
 }
 
 .slide {
@@ -39,7 +47,23 @@ html {
 .slide2 {
   left: 100vw;
 }
+/*
+#quote-container {
+  position: absolute;
+  width: 100%;
+}
 
+.quote {
+  display: inline-block;
+  margin: 0 auto;
+  background-image: url('../images/pattern-quotes.svg');
+  background-size: contain;
+  background-color: hsl(240, 38%, 20%, 0);
+  width: 60px;
+  height: 50px;
+  
+}
+*/
 .quote {
   background-image: url('../images/pattern-quotes.svg');
   background-size: contain;
@@ -63,61 +87,50 @@ html {
 
 .arrows-container { 
   position: absolute;
-  top: 86%;
-  left: 37%;
-  width: 33%;
-  height: 13%;
+  top: 287px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  --arrow-button-width: 42px;
 }
 
-.arrow-previous, .arrow-next {  
+#arrow-previous, #arrow-next {  
   background-size: 8.5px 12px;
   background-position: center;
   background-repeat: no-repeat;
   background-color: white;
-  width: 40%;
+  width: var(--arrow-button-width);
   height: 100%;  
   display: inline-block;
+}
+
+#arrow-previous {
+  background-image: url('../images/icon-prev.svg');
+  border-radius: 50% 0 0 50%; 
+  margin: 0 0 0 calc(50% - var(--arrow-button-width));
+}
+
+#arrow-next {
+  background-image: url('../images/icon-prev.svg');
   margin: 0;
-}
-
-.arrow-previous {
-  background-image: url('../images/icon-prev.svg');
   border-radius: 50% 0 0 50%;
-}
-
-.arrow-next {
-  background-image: url('../images/icon-prev.svg');
+  position: relative;
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-  border-radius: 50% 0 0 50%;
-  position: relative;
-  left: -11%;
 }
 
-.arwnext1:hover {
+.arwactive:hover {
   position: relative;
   top: -2px;
   box-shadow: -5px 5px 5px 2px rgba(0,0,0,0.2);
 }
 
-.arwnext1:active {
+#arrow-previous.arwactive:active,
+#arrow-next.arwactive:active {
   position: relative;
-  background-color: hsl(0,0%,95%);
-  top: 0;
-  box-shadow: -5px 5px 5px 2px rgba(0,0,0,0);
-}
-
-.arwprev2:hover {
-  position: relative;
-  top: -2px;
-  box-shadow: -5px 5px 5px 2px rgba(0,0,0,0.2);
-}
-
-.arwprev2:active {
-  position: relative;
-  background-color: hsl(0,0%,95%);
+  background-color: hsl(0, 0%, 95%);
   top: 0;
   box-shadow: -5px 5px 5px 2px rgba(0,0,0,0);
 }
