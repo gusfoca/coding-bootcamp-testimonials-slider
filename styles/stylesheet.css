@@ -43,6 +43,10 @@ body {
   left: 100vw;
 }
 
+footer {
+  width: 100%;
+}
+
 .attribution {
   width: 100%;
   margin: 0 auto;
@@ -298,12 +302,12 @@ body {
   }
   
   .persona {
-    position: absolute;
+    position: relative;
     font-weight: 500;
-    font-size: 0.6rem;  
+    font-size: 0.64rem;  
     line-height: 1.4em;
-    margin-top: max(500px, 37.2vw);
-    margin-left: 11.3vw;
+    margin-top: 2.48vw;
+    margin-left: 0;
   }  
   
   .curve {
