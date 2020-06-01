@@ -297,7 +297,7 @@ footer {
     color: hsl(240, 18%, 77%);
   }
   
-  #persona-break {
+  .persona-break {
     display: none;
   }
   
